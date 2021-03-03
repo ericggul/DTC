@@ -1,0 +1,26 @@
+<svg id="레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 398.54 382.54">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <line id="L12" class="cls-1" x1="199.44" y1="27.83" x2="27.64" y2="152.65"/>
+  <line id="L23" class="cls-1" x1="371.23" y1="152.65" x2="199.44" y2="27.83"/>
+  <line id="L34" class="cls-1" x1="305.61" y1="354.6" x2="371.23" y2="152.65"/>
+  <line id="L45" class="cls-1" x1="93.26" y1="354.6" x2="305.61" y2="354.6"/>
+  <line id="L15" class="cls-1" x1="27.64" y1="152.65" x2="93.26" y2="354.6"/>
+  <line id="L25" class="cls-1" x1="199.44" y1="27.79" x2="93.26" y2="354.56"/>
+  <line id="L24" class="cls-1" x1="305.61" y1="354.56" x2="199.44" y2="27.79"/>
+  <polyline id="L14" class="cls-1" points="30.04 152.6 27.64 152.6 305.61 354.56"/>
+  <line id="L13" class="cls-1" x1="371.23" y1="152.6" x2="30.04" y2="152.6"/>
+  <line id="L35" class="cls-1" x1="93.26" y1="354.56" x2="371.23" y2="152.6"/>
+  <circle id="P5" class="cls-1" cx="93.27" cy="354.33" r="27.27"/>
+  <circle id="P4" class="cls-1" cx="305.77" cy="354.77" r="27.27"/>
+  <circle id="P3" class="cls-1" cx="370.77" cy="152.77" r="27.27"/>
+  <circle id="P2" class="cls-1" cx="199.77" cy="27.77" r="27.27"/>
+  <circle id="P1" class="cls-1" cx="27.77" cy="152.77" r="27.27"/>
+</svg>

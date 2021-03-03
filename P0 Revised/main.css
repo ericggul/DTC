@@ -12,26 +12,13 @@ body{
 	background-color: #a18452;
 	display: flex;
 	justify-content: center;
+	text-align: center;
 	align-items: center;
+	overflow: visible;
 }
 
-.pentagon{
-	height: 0;
-	width: 160px;
-	border-top: 160px solid white;
-	border-left: 80px solid transparent;
-	border-right: 80px solid transparent;
-	position: relative;
-}
-
-.pentagon:before{
-	position: absolute;
-	content: '';
-	height: 0;
-	width: 0;
-	border-bottom: 160px solid white;
-	border-left: 160px solid transparent;
-	border-right: 160px solid transparent;
-	bottom: 160px;
-	left: -80px;
-}
+.cls-1 {
+	fill: #fff;
+	stroke: #000;
+	stroke-miterlimit: 10;
+  }
