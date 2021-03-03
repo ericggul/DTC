@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200;300;400;500;600;700&display=swap');
+
+
+body{
+	font-family: 'Yanone Kaffeesatz';
+	display: flex;
+}
+
+
+.container{
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	opacity: 1;
+	transition: all 1s cubic-bezier(1, 0.08, 0.74, 1.27);
+}
+
+.container.active{
+	background-color: #453566;
+}
+
+.container h1{
+	font-size: 70px;
+	font-weight: 700;
+	color: #453566;
+}
+
+.alpha {
+	height: 700px;
+	width: 1000px;
+	background-color: #453566;
+	margin-left: auto;
+	margin-right: auto;
+	transition: all 1s cubic-bezier(1, 0.08, 0.74, 1.27);
+}
+
+.alpha-grid{
+	display: grid;
+	grid-template-columns: repeat(20, 50px);
+	grid-template-rows: repeat(20, 30px);
+}
+
+.alpha p{
+	font-size: 100px;
+	font-weight: 500;
+	color: #2d2242;
+}
+
+.alpha.invisible{
+	display: none;
+}
+
+.item1{
+	grid-column-start: 1;
+	grid-column-end: 5;
+	grid-row-start: 1;
+	grid-row-end: 4;
+}
+
+.item2{
+	grid-column-start: 5;
+	grid-column-end: 9;
+}
+
+.item3{
+	grid-column-start: 9;
+	grid-column-end: 12;
+}
+
+.item4{
+	grid-column-start: 12;
+	grid-column-end: 17;
+}
+
+.item5{
+	grid-column-start: 17;
+	grid-column-end: 21;
+}
+
+.enter{
+	position: absolute;
+	font-size: 100px;
+	text-align: center;
+	top: 400px;
+	font-weight: 500;
+	color: white;
+	vertical-align: center;
+	cursor: pointer;
+}
+
+
+.beta{
+	display: none;
+
+}
