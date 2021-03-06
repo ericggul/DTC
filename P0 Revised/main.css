@@ -28,14 +28,28 @@ body{
 }
 
 #Blackswan_modal{
+
 	display: none;
 	position: fixed;
 	background-color: black;
-	opacity: 0.3;
+	opacity: 0.7;
 	top: 20px;
 	left: 30px;
 	border-radius: 5%;
-	height: 200px;
-	width: 300px;
+	height: 500px;
+	width: 400px;
+	padding: 20px;
+	padding-left: 30px;
 	color: white;
+}
+
+#Blackswan_modal h1{
+	opacity: 0.9;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-right: 15px;
+}
+
+#Blackswan_modal p{
+	opacity: 0.8;
 }
