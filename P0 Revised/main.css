@@ -53,3 +53,9 @@ body{
 #Blackswan_modal p{
 	opacity: 0.8;
 }
+
+#svg_container{
+	position:relative;	
+	margin-top: auto;
+	margin-bottom: auto;
+}
