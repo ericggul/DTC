@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "test.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main" >
+        <div><p id="p1"  draggable="true">This element is draggable.</p></div>
+        <div><p id="p2"  draggable="true">This element is draggable.</p></div>
+        <div><p id="p3"  draggable="true">This element is draggable.</p></div>
+        <div><p id="p4"  draggable="true">This element is draggable.</p></div>
+
+
+    </div>
+
+    <script>
+
+        function dragStart(ev, tgt){
+            var stylo = window.getComputedStyle(ev.target, null);
+            var obj = {id: ev.target.id, loc:(parseInt(stylo.getPropertyValue("left"),10)- ev.clientX) + ',' + (parseInt(stylo.getPropertyValue("top"),10) - ev.clientY)}
+            console.log(obj);
+            ev.dataTransfer.setData("application/my-app",JSON.stringify(obj));
+            /*ev.dataTransfer.setData("application/my-app",ev.target.id);*/
+
+        }
+        function dragOver(ev){
+            ev.preventDefault();
+            ev.dataTransfer.dropEffect = "move";
+        }
+
+        function drop(ev, tgt){
+
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("application/my-app");
+            console.log(tgt);
+            var indicator = data.split('","loc":"')[0].split('"id":"')[1];
+            console.log(indicator);
+            var loc = data.split('"loc":"')[1].split('"}')[0];
+            if(tgt.id === indicator){
+                tgt.style.left = (ev.clientX + parseInt(loc.split(",")[0],10)) + 'px';
+                tgt.style.top = (ev.clientY + parseInt(loc.split(",")[1],10)) + 'px';
+            }
+        }
+        
+        for (let i = 1; i <5; i++){
+            document.getElementById(`p${i}`).addEventListener('dragstart', function(){dragStart(event,document.getElementById(`p${i}`))}, false);
+            document.body.addEventListener('dragover', dragOver);
+            document.body.addEventListener('drop', function(){drop(event,document.getElementById(`p${i}`))}, false);
+       }
+
+    </script>
+</body>
+</html>
