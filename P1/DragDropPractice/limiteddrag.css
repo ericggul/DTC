@@ -1,0 +1,23 @@
+#main{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(1, 500px);
+    grid-template-rows: repeat(4, 200px);
+}
+
+#main .box{
+    margin: 10px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+
+}
+
+.innerbox{
+    height: 30px;
+    color: white;
+    background-color: green;
+    margin-top: 10px;
+    border-radius: 5px;
+}
