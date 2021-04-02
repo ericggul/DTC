@@ -18,3 +18,7 @@ const writer = () =>{
 }
 
 document.addEventListener('DOMContentLoaded', writer, false);
+
+
+//Graph
+
