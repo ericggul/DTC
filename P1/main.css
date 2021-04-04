@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+#main{
+    background-image: url("svg/Background.svg");
+    position: relative;
+    background-repeat: repeat;
+    height: 100vh;
+    width: 100vw;
+    /*font-family: 'Amatic SC', cursive;*/
+    font-family: 'Crete Round', serif;
+}
+
+#main h1{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 3vw;
+}
+
+h2{
+    font-size: 2vw;
+}
+h2 small{
+    font-size: 1vw;
+    margin-left: 0.1vw;
+}
+
+p{
+    font-size: 1vw;
+    font-weight:400;
+    margin-top: 1vh;
+}
+
+svg{
+    position: relative;
+}
+
+  
+.clicked{
+    animation: wipe-out 5s ease-in;
+}
+
+.clicked rect, .clicked path, .clicked polygon{
+    opacity: 0.7;
+    fill: white;
+}
+
+
+
+@keyframes wipe-out{
+    0% { opacity: 0}
+    10% {opacity: 0.2}
+    25% {opacity: 0.5}
+    50% {opacity: 0.8}
+}
+
+.object{
+    opacity: 1;
+    transition: opacity 2s ease-in;
+}
+.object:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.description{
+    opacity: 1;
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+    display: none;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 1s ease-in;
+}
+
+.visible{
+    display: inline-block;
+    opacity: 1;
+    animation: visible-transition 2s ease-in;
+}
+
+@keyframes visible-transition{
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.visible span{
+    animation-name: ticktock;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ticktock{
+    0% {opacity: 0}
+    50%{opacity: 1}
+    100%{opacity: 0}
+}
+
+#T_Below{
+    margin-top: 2vh;
+    text-align: center;
+    font-size: 1vw;
+    margin-bottom: 2vh;
+}
+
+#wrap_loader{
+    font-size: 1.2vw;
+    margin-bottom: 2vh;
+    cursor: pointer;
+}
+
+#wrap_loader:hover{
+    color: palevioletred;
+}
+
+.wrapper{
+    opacity: 0;
+}
+
+.wrapclicked{
+    opacity: .7;
+}
