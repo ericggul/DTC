@@ -40,6 +40,9 @@ svg{
     position: relative;
 }
 
+.unclicked{
+    animation: wipe-in 3s ease-in;
+}
   
 .clicked{
     animation: wipe-out 5s ease-in;
@@ -59,10 +62,22 @@ svg{
     50% {opacity: 0.8}
 }
 
+
+@keyframes wipe-in{
+    0% { opacity: 0}
+    10% {opacity: 0.2}
+    25% {opacity: 0.3}
+    50% {opacity: 0.5}
+}
+
+
 .object{
     opacity: 1;
     transition: opacity 2s ease-in;
+    cursor: pointer;
 }
+
+
 .object:hover{
     opacity: 0.7;
     cursor: pointer;
@@ -76,7 +91,7 @@ svg{
     display: none;
     opacity: 0;
     cursor: pointer;
-    transition: opacity 1s ease-in;
+    animation: visible-transition 2s ease-in;
 }
 
 .visible{
@@ -125,4 +140,9 @@ svg{
 
 .wrapclicked{
     opacity: .7;
+    padding-bottom: 8vh;
+}
+
+.wrapclicked i{
+    opacity: 1;
 }

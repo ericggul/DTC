@@ -4,15 +4,7 @@ $(document).ready(function() {
         var position =  $(`#P${i}`).offset();
         var width = $(`#T${i}`).width();
         var height = $(`#T${i}`).height();
-        $(`#T${i}`).offset({top: position.top-height/1.76, left: position.left - width/2});
-
-        //resizing
-        window.addEventListener('resize',()=>{
-            var position =  $(`#P${i}`).offset();
-            var width = $(`#T${i}`).width();
-            var height = $(`#T${i}`).height();
-            $(`#T${i}`).offset({top: position.top-height/1.76, left: position.left - width/2});
-        })
+        $(`#T${i}`).offset({top: position.top-height/1.8, left: position.left - width/2});
 
         $(`#O${i}`).click(function() {
             $(`#L${i}`).toggleClass('clicked');
@@ -22,6 +14,14 @@ $(document).ready(function() {
         $(`#T${i}`).click(function() {
             $(`#L${i}`).toggleClass('clicked');
             $(`#T${i}`).toggleClass('visible');
+        })
+
+        //resizing
+        window.addEventListener('resize',()=>{
+            var position =  $(`#P${i}`).offset();
+            var width = $(`#T${i}`).width();
+            var height = $(`#T${i}`).height();
+            $(`#T${i}`).offset({top: position.top-height/1.76, left: position.left - width/2});
         })
         
     }
