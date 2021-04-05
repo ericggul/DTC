@@ -17,12 +17,12 @@ $(document).ready(function() {
         })
 
         //resizing
-        window.addEventListener('resize',()=>{
+        /*window.addEventListener('resize',()=>{
             var position =  $(`#P${i}`).offset();
             var width = $(`#T${i}`).width();
             var height = $(`#T${i}`).height();
             $(`#T${i}`).offset({top: position.top-height/1.76, left: position.left - width/2});
-        })
+        })*/
         
     }
 
