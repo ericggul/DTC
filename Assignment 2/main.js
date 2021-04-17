@@ -24,6 +24,15 @@ fetch(myRequest)
                 document.getElementById('Genre').textContent = `#${thisSpot.genre}`;
                 document.getElementById('Atmosphere').textContent = `#${thisSpot.atmosphere}`;
                 //Ratting: Bottle of Beer
+                roundedRate = Math.round(thisSpot.rating*2);
+                for (let k = 1; k < roundedRate+1; k++){
+                    document.getElementById(`B${k}`).style.opacity = 1;
+                }
+                if (roundedRate!= 10){
+                    for (let j = roundedRate+1; j<11; j++){
+                        document.getElementById(`B${j}`).style.opacity = 0;
+                    }
+                }
                 document.getElementById('Rating').textContent = `${thisSpot.rating.toFixed(1)}/5.0`;
                 document.getElementById('Location').textContent = locConverter(thisSpot.location);
                 //Search in Google
@@ -32,7 +41,7 @@ fetch(myRequest)
 
             })
         }
-        console.log(data.spots[1]);
+        console.log(data.spots);
         console.log(document.getElementById('Header').textContent);
         
         
