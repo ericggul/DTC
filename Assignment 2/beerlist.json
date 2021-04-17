@@ -1,0 +1,25 @@
+{
+    "spots":[
+        {"index":1,"name": "1842", "beer":"pilsner", "genre":"czech","atmosphere":"european", "rating": 4.2, "location":2},
+        {"index":2,"name": "PIKE", "beer":"double IPA", "genre":"pretzel","atmosphere":"hip", "rating": 4.5, "location":2},
+        {"index":3,"name": "Woozooin", "beer":"general", "genre":"pizza","atmosphere":"modern", "rating": 5.0, "location":2},
+        {"index":4,"name": "Brewdog", "beer":"IPA, Lager", "genre":"western","atmosphere":"pub", "rating": 3.4, "location":2},
+        {"index":5,"name": "Tappublic", "beer":"clausthaler", "genre":"italian","atmosphere":"pub", "rating": 4.1, "location":2},
+        {"index":6,"name": "Gooroom", "beer":"general", "genre":"italian","atmosphere":"wine bar", "rating": 2.5, "location":2},
+        {"index":7,"name": "Blue55", "beer":"golden ale", "genre":"chicken","atmosphere":"korean pub", "rating": 3.9, "location":1},
+        {"index":8,"name": "Wolfhound", "beer":"guinness", "genre":"irish","atmosphere":"irish pub", "rating": 4.0, "location":1},
+        {"index":9,"name": "Fat albert's", "beer":"pilsner", "genre":"english","atmosphere":"english pub", "rating": 3.4, "location":1},
+        {"index":10,"name": "Craft Hans", "beer":"craft beer", "genre":"chicken","atmosphere":"korean pub", "rating": 3.4, "location":1},
+        {"index":11,"name": "Caligari", "beer":"brewer", "genre":"pizza","atmosphere":"pub", "rating": 3.5, "location":1},
+        {"index":12,"name": "Nine", "beer":"lager, ale", "genre":"chicken","atmosphere":"hip", "rating": 5.0, "location":1},
+        {"index":13,"name": "Fisherman's", "beer":"craft beer", "genre":"american","atmosphere":"dining", "rating": 3.8, "location":1},
+        {"index":14,"name": "Thisrty Monk", "beer":"Weihenstephan", "genre":"german","atmosphere":"european", "rating": 3.3, "location":1},
+        {"index":15,"name": "Cannonball", "beer":"lager, IPA", "genre":"international","atmosphere":"hip", "rating": 4.6, "location":1},
+        {"index":16,"name": "Dalmac Super", "beer":"bottle", "genre":"korean","atmosphere":"korean pub", "rating": 3.2, "location":3},
+        {"index":17,"name": "The Booth", "beer":"ale", "genre":"pizza","atmosphere":"modern hip", "rating": 3.8, "location":3},
+        {"index":18,"name": "The Kudos", "beer":"carft beer", "genre":"pizza","atmosphere":"modern hip", "rating": 4.5, "location":3},
+        {"index":19,"name": "Bel.G", "beer":"belgian", "genre":"belgian","atmosphere":"belgian pub", "rating": 4.5, "location":3},
+        {"index":20,"name": "Namsan Chemistry", "beer":"craft beer", "genre":"international","atmosphere":"street hip", "rating": 3.4, "location":3},
+        {"index":21,"name": "California Kitchen", "beer":"craft beer", "genre":"burger","atmosphere":"street hip", "rating": 4.6, "location":3}
+    ]
+}
