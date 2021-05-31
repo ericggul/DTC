@@ -46,5 +46,5 @@ void draw(){
     rect( 1*i, height - priceListHigh[i] ,1, priceListHigh[i] - priceListLow[i]);
     
   }
-  saveFrame("AAPLStock.jpg");
+  saveFrame("output/AAPLStock_#####.jpg");
 }

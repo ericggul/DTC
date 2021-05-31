@@ -4,21 +4,36 @@ int i;
 import java.util.Stack;
 import java.util.List;
 
+
 public void setup(){
   table = loadTable("Apple.csv", "header");
   size(1250,500);
   background(40);
- 
 }
 
+//Define Coordinate Class to store the (j,k) coordinate value per time
+class Coordinate{
+  int j, k;
+  Coordinate(int _j, int _k){
+    j = _j;
+    k = _k;
+  }
+}
+
+//Draw Function
 void draw(){
+  
+  //Intialize String
   String[] initialPriceListLow, initialPriceListHigh, initialDate;
+  //Data Retriving
   initialPriceListLow = table.getStringColumn("Low");
   initialPriceListHigh = table.getStringColumn("High");
   initialDate = table.getStringColumn("Date");
   
+  //Total Time Length of Data
   int totalLength = initialPriceListLow.length;
   
+  //Min and Max Price of each time
   float[] priceListLow = new float [totalLength];
   float[] priceListHigh = new float [totalLength];
   String[] date = new String [totalLength];
@@ -29,10 +44,14 @@ void draw(){
     date[i] = initialDate[totalLength-1-i];
   }
   
+  //MaxValue of All Time
   int maxValue = ceil(reverse(sort(priceListHigh))[0]);
-  print(maxValue);
-  print("Max Value");
+  
+  //Intializing two important two-dimensional data arrays
+  //valueMain: Stores j-k coordinate, j: price, k: amount of time/day, value: diff_result, the density of a price staying in certain categry
   float valueMain[][] = new float [maxValue*2][]; 
+  //timeValue: Stores i-ctl coordinate, i: time, ctl: stack of (j,k), value: (j,k) coordinate value
+  Coordinate timeValue[][] = new Coordinate [totalLength][];
 
   
   for(int i=0; i<totalLength; i++){
@@ -52,19 +71,36 @@ void draw(){
          float newArray[] = new float[currentjLength+1];
          for(int k=0; k<currentjLength; k++){
            newArray[k] = valueMain[j][k];
+           
+           //Updating timeValue series
+                  if(timeValue[i] == null){
+                     timeValue[i] = new Coordinate[] {};
+                   }
+                   else{
+                     int currentTimeLength = timeValue[i].length;
+                     Coordinate newTimeArray[] = new Coordinate [currentTimeLength+1];
+                     for(int ctl=0; ctl<currentTimeLength; ctl++){
+                       newTimeArray[ctl] = timeValue[i][ctl];
+                     }
+                     newTimeArray[currentTimeLength] = new Coordinate(j,k);
+                     timeValue[i] = newTimeArray;
+                   }
+              
          }
          newArray[currentjLength] = diff_result;
          valueMain[j] = newArray;
        }
-       //int currentjLength = valueMain[j].length;
-       //valueMain[j][currentjLength] = diff_result;
+       
+  
 
     }
   }
   
   i ++;
   
-  if(i<maxValue){
+  
+  
+  if(i<totalLength){
     if(i==1){
       textSize(20);
       text("Apple(AAPL) Stock Price", 20, 30);
@@ -73,10 +109,16 @@ void draw(){
     }
     fill(255);
     noStroke();
-    if (valueMain[i] != null){
-      int currentArrayLength = valueMain[i].length;
+    if (timeValue[i] != null){
+      int currentArrayLength = timeValue[i].length;
       for(int t=0; t<currentArrayLength; t++){
-        ellipse(i*5,height-t*5,5*valueMain[i][t],5*valueMain[i][t]);
+        
+        //Retrive value of j, k coordinate
+        int jVal = timeValue[i][t].j;
+        int kVal = timeValue[i][t].k;
+        
+        
+        ellipse(jVal*5,height-kVal*5,5*valueMain[jVal][kVal],5*valueMain[jVal][kVal]);
     }
     }
     
