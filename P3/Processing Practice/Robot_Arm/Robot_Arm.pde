@@ -1,6 +1,9 @@
 int armAngle = 0;
 int angleChange = 5;
 final int ANGLE_LIMIT = 135;
+int headBangler = 0;
+int headChange = 1;
+final int HEAD_LIMIT = 27;
 
 void setup()
 {
@@ -16,10 +19,13 @@ void draw(){
   translate(50,50);
   drawRobot();
   armAngle += angleChange;
+  headBangler += headChange;
   
   if (armAngle > ANGLE_LIMIT || armAngle < 0){
     angleChange = -angleChange;
     armAngle += angleChange;
+    headChange = -headChange;
+    headBangler += headChange;
   }
   popMatrix();
 }
@@ -41,6 +47,8 @@ void drawRobot()
   ellipse(30, 12, 12, 12); // left eye
   ellipse(47, 12, 12, 12); // right eye
 }
+
+
 
 void drawLeftArm(){
  pushMatrix();
