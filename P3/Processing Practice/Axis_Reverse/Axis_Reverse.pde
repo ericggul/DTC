@@ -6,7 +6,7 @@ import java.util.List;
 
 public void setup(){
   table = loadTable("Apple.csv", "header");
-  size(1250,200);
+  size(1250,500);
   background(40);
  
 }
@@ -29,12 +29,11 @@ void draw(){
     date[i] = initialDate[totalLength-1-i];
   }
   
-  int maxValue = ceil(sort(priceListHigh)[0]);
+  int maxValue = ceil(reverse(sort(priceListHigh))[0]);
+  print(maxValue);
+  print("Max Value");
   float valueMain[][] = new float [maxValue*2][]; 
-  
-  //Stack <float[][]> valueStack = new Stack<float[][]>();
-  //List<Stack<float[]>>
-  Stack[] valueStack = new Stack[maxValue];
+
   
   for(int i=0; i<totalLength; i++){
     int low = floor(priceListLow[i]);
@@ -44,11 +43,22 @@ void draw(){
     for(int j=low; j<high; j++){
        float min_diff = min(min(priceListHigh[i]-j, 1),j-priceListLow[i]+1);
        float diff_result = min_diff/diff;
-       valueStack[j].push(diff_result);
-       //valueMain[j].push(diff_result); 
-       //valueStack[j].push();
-       //float x[] = new float [4];
-       //x.add(diff_result);
+
+       if(valueMain[j] == null){
+         valueMain[j] = new float[] {diff_result};
+       }
+       else{
+         int currentjLength = valueMain[j].length;
+         float newArray[] = new float[currentjLength+1];
+         for(int k=0; k<currentjLength; k++){
+           newArray[k] = valueMain[j][k];
+         }
+         newArray[currentjLength] = diff_result;
+         valueMain[j] = newArray;
+       }
+       //int currentjLength = valueMain[j].length;
+       //valueMain[j][currentjLength] = diff_result;
+
     }
   }
   
@@ -63,7 +73,12 @@ void draw(){
     }
     fill(255);
     noStroke();
-    ellipse(i*20,10,10,10);
+    if (valueMain[i] != null){
+      int currentArrayLength = valueMain[i].length;
+      for(int t=0; t<currentArrayLength; t++){
+        ellipse(i*5,height-t*5,5,5);
+    }
+    }
     
   }
   saveFrame("AAPLStock.jpg");
