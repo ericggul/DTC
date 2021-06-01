@@ -1,0 +1,14 @@
+.main{
+    position: absoulte;
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(farthest-side at 50vw 40px, #d36666, #222);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .link{
+        text-decoration: none;
+        color: black;
+    }
+}
