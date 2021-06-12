@@ -2,7 +2,7 @@
 import processing.pdf.*;
 
 //Company Name
-String company = "SBUX";
+String company = "GOOG";
 
 Table table; 
 PFont font;
@@ -37,7 +37,6 @@ public void setup(){
   String csv = String.format("%s.csv", company);
   table = loadTable(csv, "header");
   
-  smooth(2);
   
   //Font
   
@@ -61,9 +60,7 @@ public void setup(){
   //MaxValue of All Time
   maxValue = ceil(reverse(sort(priceListHigh))[0]);
   minValue = floor(sort(priceListHigh)[0]);
-  
-  //SBUX: $50(minValue)-$1(categoryAdjuster) is default
-  //categoryAdjuster = (minValue + maxValue) * 0.003;
+
   categoryAdjuster = (minValue) * 0.02;
   
   //Array Creation to Store Values
@@ -118,13 +115,14 @@ public void setup(){
   }
   
   //Size Setup
-  dollarStep = categoryAdjuster * 250/minValue ;
+  dollarStep = categoryAdjuster * 0.2/minValue ;
 
-  xAxisStep = dollarStep;
+  xAxisStep = dollarStep * width;
   print(xAxisStep);
   
   String outputPath = String.format("output/%sStock.pdf", company);
-  size(1300,800, PDF, "output/test.pdf");
+  size(2500,2000, PDF, "output/test.pdf");
+  smooth(8);
   background(40);
 }
 
@@ -152,12 +150,6 @@ void draw(){
     }
     
     noStroke();
-    //fill(40);
-    //rect(width-200, 0, width,200);
-    //fill(255);
-    //text(date[i], width-120, 40);
-    //String priceText = String.format("$%d", int(priceListHigh[i]+priceListLow[i])/2);
-    //text(priceText, width-120, 90);
 
     noStroke();
     if (timeValue[i] != null){
@@ -171,7 +163,7 @@ void draw(){
         
         fill(color(initialColor[0] + colorStep[0]*i,initialColor[1] + colorStep[1]*i,initialColor[2] + colorStep[2]*i));
         
-        ellipse(jVal*xAxisStep,height-kVal*5,5*pow(valueMain[jVal][kVal], 1/1.4),5*pow(valueMain[jVal][kVal], 1/1.4));
+        ellipse(jVal*xAxisStep,height-kVal*10,10*pow(valueMain[jVal][kVal], 1/1.4),10*pow(valueMain[jVal][kVal], 1/1.4));
       }
     }
   }

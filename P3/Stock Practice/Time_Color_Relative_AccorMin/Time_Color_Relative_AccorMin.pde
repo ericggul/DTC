@@ -1,6 +1,6 @@
 
 //Company Name
-String company = "GOOG";
+String company = "MSFT";
 
 Table table; 
 PFont font;
@@ -21,8 +21,9 @@ int minValue;
 float valueMain[][] = new float [maxValue*2][]; 
 Coordinate timeValue[][] = new Coordinate [totalLength][];
 
-float[] initialColor ={130, 200, 200};
-float[] finalColor = {200, 30, 50};
+
+float[] initialColor ={210, 230, 230};
+float[] finalColor = {180, 30, 40};
 float[] colorStep = {0,0,0};
 float dollarStep = 0;
 float xAxisStep = 0;
@@ -61,11 +62,8 @@ public void setup(){
   //MaxValue of All Time
   maxValue = ceil(reverse(sort(priceListHigh))[0]);
   minValue = floor(sort(priceListHigh)[0]);
-  
-  //SBUX: $50(minValue)-$1(categoryAdjuster) is default
-  //categoryAdjuster = (minValue + maxValue) * 0.003;
-  //categoryAdjuster = (minValue) * 0.02;
-  categoryAdjuster = (maxValue) * 0.004;
+ 
+  categoryAdjuster = (minValue) * 0.02;
   
   //Array Creation to Store Values
   int valueMainArrayLength = ceil(maxValue*1.1/categoryAdjuster);
@@ -112,9 +110,8 @@ public void setup(){
       }
   }
 
-  size(1250,700);
+  size(2000,1000);
   background(40);
-  frameRate(10000);
   
   //Color Setup
   for(int color_i = 0; color_i<3; color_i ++){
@@ -122,9 +119,8 @@ public void setup(){
   }
   
   //Size Setup
-  dollarStep = categoryAdjuster * 0.9/maxValue ;
-
-  xAxisStep = dollarStep * width;
+  dollarStep = categoryAdjuster * 280/minValue ;
+  xAxisStep = dollarStep;
   print(xAxisStep);
 }
 
@@ -146,11 +142,7 @@ void draw(){
   
   if(i<totalLength){
     
-    //Header
-    if(i==1){
-      header();
-    }
-    
+
     noStroke();
     //fill(40);
     //rect(width-200, 0, width,200);
@@ -171,7 +163,7 @@ void draw(){
         
         fill(color(initialColor[0] + colorStep[0]*i,initialColor[1] + colorStep[1]*i,initialColor[2] + colorStep[2]*i));
         
-        ellipse(jVal*xAxisStep,height-kVal*5,1.1*xAxisStep*pow(valueMain[jVal][kVal], 1/1.4),1.1*xAxisStep*pow(valueMain[jVal][kVal], 1/1.4));
+        ellipse(jVal*xAxisStep,height-kVal*10,10*pow(valueMain[jVal][kVal], 1/1.4),10*pow(valueMain[jVal][kVal], 1/1.4));
       }
     }
   }
@@ -188,16 +180,4 @@ void header(){
   text(header, 20, 30);
   //textSize(10);
   //text("Source: NASDAQ", 20, 50);
-}
-
-void axis(){
-  stroke(255);
-
-  //X-Axis-Label
-  textSize(20);
-  text("$", width-60, height-20);
-
-  //Y-Axis-Label
-  textSize(20);
-  text("Days", 20, 90);
 }
