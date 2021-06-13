@@ -81,6 +81,10 @@ public void setup(){
         float min_diff = min(min(priceListHigh[i]/categoryAdjuster - j, 1), j - priceListLow[i]/categoryAdjuster + 1);
         float diff_result = min_diff/diff;
         
+        if(diff_result > 2){
+          diff_result = 2; 
+        }
+        
         if(valueMain[j] == null){
            valueMain[j] = new float[] {diff_result};
          }

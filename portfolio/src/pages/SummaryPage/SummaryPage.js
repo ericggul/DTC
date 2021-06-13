@@ -14,6 +14,13 @@ function SummaryPage({ match }){
 
     console.log(project?.description.name);
 
+    const [opacity, setOpacity] = useState(0);
+
+    const hoverMessage = 
+        <div className={styles.hoverMessage} styles={{opacity: opacity}}>
+            Click n' View
+        </div>
+
     return(
         <div 
             className={styles.main}
@@ -27,12 +34,11 @@ function SummaryPage({ match }){
             </div>
 
             <a href={project?.description.link}>
-                <div className={styles.img}>
+                <div className={styles.img} onMouseEnter={()=>console.log('entered')} onMouseLeave={()=>setOpacity(0)}>
                     <img src={project?.image} alt={project?.id} />
-                    
                 </div>
             </a>
-
+            {hoverMessage}
             <div className={styles.description}>
                 {project?.description.introduction}
             </div>
