@@ -10,7 +10,7 @@ import P2 from './pages/P2/P2';
 
 function App() {
   return (
-    <Router>
+    <Router basename={'/DTC'}>
       <Switch>
         <Route exact path="/main" component={MainPage} />
         <Route exact path="/intro" component={IntroPage} />
