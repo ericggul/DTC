@@ -11,11 +11,11 @@ function Navigator({ projectId }){
     const navigator =  
         <div className={styles.navigator}>
             {projects.map((project,i)=>(
-                <a href={ i !== projectId ? project.description.link : "localhost:3000"}>
+                <Link to={ i !== projectId ? `/Summary/${i}` : `/Main`}>
                     <div>
                         { i !== projectId ? project.description.type : 'Home'}
                     </div>
-                </a>
+                </Link>
             ))}
         </div>
     

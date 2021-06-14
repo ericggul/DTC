@@ -36,23 +36,23 @@ function MainPage(){
     return(
         <div className={styles.main}
         style={{background: `radial-gradient( 200px 200px at ${x}px ${y}px, ${gradientColor}, #222)`}}>
-            <a href={P0Link}>
+            <Link to="/Summary/0">
                 <div className={styles.link1} onMouseEnter={() => setP0(true)} onMouseLeave={() =>setP0(false)}>
                     P0
                     <div className={styles.appear} style={P0 ? mountedStyle : unMountedStyle}>
                         Identity
                     </div>
                 </div>
-            </a>
-            <a href={P1Link}>
+            </Link>
+            <Link to="/Summary/1">
                 <div className={styles.link2} onMouseEnter={() => setP1(true)} onMouseLeave={() =>setP1(false)}>
                     P1
                     <div className={styles.appear} style={P1 ? mountedStyle : unMountedStyle}>
                         Born, Live and Die
                     </div>
                 </div>
-            </a>
-            <Link to="/P2">
+            </Link>
+            <Link to="/Summary/2">
                 <div className={styles.link3} onMouseEnter={() => setP2(true)} onMouseLeave={() =>setP2(false)}>
                     P2
                     <div className={styles.appear} style={P2 ? mountedStyle : unMountedStyle}>
@@ -60,7 +60,14 @@ function MainPage(){
                     </div>
                 </div>
             </Link>
-            <a className={styles.link4}>P3</a>
+            <Link to="/Summary/3">
+                <div className={styles.link4} onMouseEnter={() => setP3(true)} onMouseLeave={() =>setP3(false)}>
+                    P3
+                    <div className={styles.appear} style={P3 ? mountedStyle : unMountedStyle}>
+                        Geur Van Eeen Tulip
+                    </div>
+                </div>
+            </Link>
         </div>
     )
 

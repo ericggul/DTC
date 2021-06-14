@@ -1,11 +1,12 @@
 import { P0, P1, P2, P3 } from './Projects';
 
+import P0Img from '../assets/P0Img.PNG';
 import P1Img from '../assets/P1Img.png';
 import P2Img from '../assets/P2Img.png';
 
 export const projects = [
     {
-        id: 0, description: P0, image: P1Img
+        id: 0, description: P0, image: P0Img
     },
     {
         id: 1, description: P1, image: P1Img
