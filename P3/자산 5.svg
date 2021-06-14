@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 849 987.67">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #231815;
+        stroke-miterlimit: 10;
+        fill: url(#무제_그라디언트_15);
+      }
+    </style>
+    <radialGradient id="무제_그라디언트_15" data-name="무제 그라디언트 15" cx="424.5" cy="493.83" fx="793.998246226108" fy="219.88455176144817" r="459.97" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.03" stop-color="#f6f3f3"/>
+      <stop offset="0.16" stop-color="#d0c2c2"/>
+      <stop offset="0.29" stop-color="#af9898"/>
+      <stop offset="0.43" stop-color="#947676"/>
+      <stop offset="0.57" stop-color="#7f5b5b"/>
+      <stop offset="0.7" stop-color="#704848"/>
+      <stop offset="0.85" stop-color="#673d3d"/>
+      <stop offset="1" stop-color="#643939"/>
+    </radialGradient>
+  </defs>
+  <g id="레이어_2" data-name="레이어 2">
+    <g id="레이어_1-2" data-name="레이어 1">
+      <rect class="cls-1" x="0.5" y="0.5" width="848" height="986.67"/>
+    </g>
+  </g>
+</svg>

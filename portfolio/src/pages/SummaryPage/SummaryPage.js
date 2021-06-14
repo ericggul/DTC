@@ -38,7 +38,9 @@ function SummaryPage({ match }){
                     <img src={project?.image} alt={project?.id} />
                 </div>
             </a>
-            {hoverMessage}
+            <div className={styles.name}>
+                {project?.description.name}
+            </div>
             <div className={styles.description}>
                 {project?.description.introduction}
             </div>

@@ -23,8 +23,8 @@ int minValue;
 float valueMain[][] = new float [maxValue*2][]; 
 Coordinate timeValue[][] = new Coordinate [totalLength][];
 
-float[] initialColor ={24, 30, 20};
-float[] finalColor = {24, 150, 170};
+float[] initialColor ={100, 100, 100};
+float[] finalColor = {250, 250, 250};
 float[] colorStep = {0,0,0};
 float dollarStep = 0;
 float xAxisStep = 0;
@@ -117,7 +117,7 @@ public void setup(){
   }
   
   size(2000,700);
-  background(200);
+  background(110);
 
   
   //Color Setup
