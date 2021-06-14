@@ -1,0 +1,27 @@
+.navigator{
+    color: white;
+    display: grid;
+    grid-template-columns: 3rem 3rem;
+    grid-template-rows: 3rem 3rem;
+
+    font-size: 1rem;
+    position: absolute;
+    left: 3rem;
+    top: 3rem;
+    text-align: center;
+    a{
+        text-decoration: none;
+        div{
+            cursor: pointer;
+            transition: .1s ease-in;
+            color: white;
+    
+            &:hover{
+                color: rgb(207, 123, 123);
+    
+            }
+        }
+    }
+
+
+}

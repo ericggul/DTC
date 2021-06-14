@@ -23,8 +23,8 @@ int minValue;
 float valueMain[][] = new float [maxValue*2][]; 
 Coordinate timeValue[][] = new Coordinate [totalLength][];
 
-float[] initialColor ={100, 100, 100};
-float[] finalColor = {250, 250, 250};
+float[] initialColor ={210, 210, 210};
+float[] finalColor = {20, 20, 20};
 float[] colorStep = {0,0,0};
 float dollarStep = 0;
 float xAxisStep = 0;
@@ -116,8 +116,8 @@ public void setup(){
       }
   }
   
-  size(2000,700);
-  background(110);
+  size(10000,350);
+  background(210);
 
   
   //Color Setup
@@ -148,23 +148,10 @@ class Coordinate{
 //Draw Function
 void draw(){
 
-  i ++;
-  
-  if(i<totalLength){
-    
-    //Header
-    if(i==1){
-      //header();
-    }
-    
+  int circleSize = 35;
+  for(i = 0; i<totalLength; i++){
+   
     noStroke();
-    //fill(40);
-    //rect(width-200, 0, width,200);
-    //fill(255);
-    //text(date[i], width-120, 40);
-    //String priceText = String.format("$%d", int(priceListHigh[i]+priceListLow[i])/2);
-    //text(priceText, width-120, 90);
-
     noStroke();
     if (timeValue[i] != null){
       int currentArrayLength = timeValue[i].length;
@@ -177,7 +164,7 @@ void draw(){
         
         fill(color(initialColor[0] + colorStep[0]*i,initialColor[1] + colorStep[1]*i,initialColor[2] + colorStep[2]*i));
         
-        ellipse(jVal*xAxisStep,height-kVal*5,5*pow(valueMain[jVal][kVal], 1/1.4),5*pow(valueMain[jVal][kVal], 1/1.4));
+        ellipse(jVal*xAxisStep,height-kVal*circleSize,circleSize*pow(valueMain[jVal][kVal], 1/1.4),circleSize*pow(valueMain[jVal][kVal], 1/1.4));
       }
     }
   }

@@ -1,0 +1,40 @@
+@mixin linkStyling($x, $y){
+    position: absolute;
+    text-decoration: none;
+    color: #222;
+    $xvalue: ($x) + vw;
+    $yvalue: ($y) + vh;
+    top: $yvalue;
+    left: $xvalue;
+    width: 15vw;
+    height: 20vh;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 5vw;
+  }
+
+
+.main{
+    position: absoulte;
+    height: 100vh;
+    width: 100vw;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .link1{
+        @include linkStyling(20, 80);
+    }
+    .link2{
+        @include linkStyling(30, 30);
+    }
+    .link3{
+        @include linkStyling(60, 70);
+    }
+    .link4{
+        @include linkStyling(80, 30);
+    }
+}

@@ -1,0 +1,56 @@
+.main{
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    background: #222;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    overflow: auto;
+
+    .header{
+        font-size: 1.5rem;
+        margin: 5rem;
+        transition: .1s ease-in;
+        cursor: pointer;
+
+        &:hover{
+            color: rgb(207, 123, 123);
+        }
+
+    }
+
+    .img{
+        height: 50vw;
+
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .hoverMessage{
+        color: white;
+        opacity: 0;
+    }
+
+    .name{
+        margin-top: 5rem;
+        font-size: 2rem;
+    }
+
+    .description{
+        margin-bottom: 10rem;
+        padding: 2rem;
+        width: 70%;
+        color: rgb(95, 95, 95);
+        transition: .1s ease-in;
+
+        &:hover{
+            color: white;
+        }
+    }
+
+
+}
