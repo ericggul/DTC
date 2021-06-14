@@ -116,7 +116,7 @@ public void setup(){
       }
   }
   
-  size(10000,350);
+  size(2000,1000);
   background(210);
 
   
@@ -148,7 +148,7 @@ class Coordinate{
 //Draw Function
 void draw(){
 
-  int circleSize = 35;
+  int circleSize =80;
   for(i = 0; i<totalLength; i++){
    
     noStroke();
@@ -161,17 +161,18 @@ void draw(){
         //Retrive value of j, k coordinate
         int jVal = timeValue[i][t].j;
         int kVal = timeValue[i][t].k;
+        float multiplier = pow(valueMain[jVal][kVal], 1/1.4);
         
-        fill(color(initialColor[0] + colorStep[0]*i,initialColor[1] + colorStep[1]*i,initialColor[2] + colorStep[2]*i));
+        fill(color(initialColor[0] + colorStep[0]*i,initialColor[1] + colorStep[1]*i,initialColor[2] + colorStep[2]*i, 2));
         
-        ellipse(jVal*xAxisStep,height-kVal*circleSize,circleSize*pow(valueMain[jVal][kVal], 1/1.4),circleSize*pow(valueMain[jVal][kVal], 1/1.4));
+        ellipse(jVal*xAxisStep,height-kVal*7,circleSize,circleSize);
       }
     }
   }
  
   
   //Saving
-  String outputPath = String.format("output/%sStock2.jpg", company);
+  String outputPath = String.format("output/%sStock3.jpg", company);
   saveFrame(outputPath);
 }
 
