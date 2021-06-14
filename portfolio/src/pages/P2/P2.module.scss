@@ -1,0 +1,21 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #302b28;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+
+    img{
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .download{
+        position: absolute;
+        text-decoration: none;
+        color: white;
+        bottom: 10%;
+        right: 10%;
+    }
+}
